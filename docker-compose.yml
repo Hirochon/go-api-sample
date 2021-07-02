@@ -31,6 +31,15 @@ services:
       - dbdata:/var/lib/mysql
       - ./tmp/config:/etc/mysql/conf.d
 
+  mongo-db:
+    image: mongo:4.0.0
+    container_name: mongo_db
+    environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+        - 27017:27017
+
 volumes:
   dbdata:
     driver: local
