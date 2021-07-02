@@ -32,8 +32,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		var hello helloJSON
 		json.Unmarshal(buf.Bytes(), &hello)
 
-		fmt.Println(hello)
-
 		w.WriteHeader(http.StatusCreated)
 		fmt.Fprintf(w, "POST hello! %s\n", hello)
 

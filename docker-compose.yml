@@ -11,6 +11,12 @@ services:
       - 8080:8080
     depends_on:
       - db
+    environment:
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+      - MYSQL_DATABASE
+      - MYSQL_PORT
+      - MYSQL_HOST
 
   db:
     image: mysql:5.7.31
